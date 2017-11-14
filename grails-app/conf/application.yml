@@ -1,0 +1,79 @@
+---
+
+grails:
+  profile: rest-api
+  codegen.defaultPackage: test
+  spring.transactionManagement.proxies: false
+  gorm.reactor.events: false
+
+spring:
+  main.banner-mode: 'off'
+  groovy.template.check-template-location: false
+  jmx.enabled: false
+
+---
+
+grails:
+  mime:
+    disable:
+      accept.header.userAgents:
+        - Gecko
+        - WebKit
+        - Presto
+        - Trident
+    types:
+      all: '*/*'
+      atom: staff/atom+xml
+      css: text/css
+      csv: text/csv
+      form: staff/x-www-form-urlencoded
+      html:
+        - text/html
+        - staff/xhtml+xml
+      js: text/javascript
+      json:
+        - staff/json
+        - text/json
+      multipartForm: multipart/form-data
+      pdf: staff/pdf
+      rss: staff/rss+xml
+      text: text/plain
+      hal:
+        - staff/hal+json
+        - staff/hal+xml
+      xml:
+        - text/xml
+        - staff/xml
+  urlmapping.cache.maxsize: 1000
+  controllers.defaultScope: singleton
+  converters.encoding: UTF-8
+  views:
+    default.codec: html
+    gsp:
+      encoding: UTF-8
+      htmlcodec: xml
+      codecs:
+        expression: html
+        scriptlets: html
+        taglib: none
+        staticparts: none
+  databinding.convertEmptyStringsToNull: false
+  web.url.converter: hyphenated
+
+---
+
+hibernate.cache:
+  queries: true
+  use_second_level_cache: true
+  use_query_cache: true
+  region.factory_class: org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory
+
+dataSource:
+  dbCreate: create-drop
+  url: jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+  pooled: true
+  driverClassName: org.h2.Driver
+  dialect: org.hibernate.dialect.H2Dialect
+  username: sa
+  password:
+  logSql: true

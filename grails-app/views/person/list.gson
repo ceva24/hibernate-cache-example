@@ -1,0 +1,7 @@
+import uk.co.ceva24.hce.Person
+
+model {
+    List<Person> personList = []
+}
+
+json tmpl.person(personList)

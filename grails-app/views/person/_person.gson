@@ -1,0 +1,9 @@
+import uk.co.ceva24.hce.Person
+
+model {
+    Person person
+}
+
+json {
+    username person.username
+}

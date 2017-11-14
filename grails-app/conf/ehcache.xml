@@ -1,0 +1,15 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ehcache.xsd">
+
+    <cache name="org.hibernate.cache.spi.UpdateTimestampsCache" maxElementsInMemory="10000" eternal="true" overflowToDisk="false"
+           diskPersistent="false" />
+
+    <cache name="org.hibernate.cache.internal.StandardQueryCache" maxElementsInMemory="1000" eternal="false" timeToIdleSeconds="10"
+           timeToLiveSeconds="10" overflowToDisk="false" diskPersistent="false" memoryStoreEvictionPolicy="LRU" />
+
+    <cache name="uk.co.ceva24.hce.Person" maxElementsInMemory="1000" eternal="false" timeToIdleSeconds="10" timeToLiveSeconds="10"
+           overflowToDisk="false" diskPersistent="false" memoryStoreEvictionPolicy="LRU" />
+
+    <defaultCache maxElementsInMemory="50" eternal="false" timeToIdleSeconds="10" timeToLiveSeconds="10" overflowToDisk="false"
+                  diskPersistent="false" memoryStoreEvictionPolicy="LRU" />
+
+</ehcache>
